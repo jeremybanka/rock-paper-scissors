@@ -9,15 +9,21 @@ namespace RockPaperScissors.Tests
     [TestMethod]
     public void Play_returnsWinner_0()
     {
-      int output = Game.Play("paper", "rock");
-      Assert.AreEqual(output, 0);
+      string output = Game.Play("paper", "rock");
+      Assert.AreEqual(output, "Player 0 Wins!");
     }
 
     [TestMethod]
     public void Play_returnsWinner_1()
     {
-      int output = Game.Play("paper", "scissors");
-      Assert.AreEqual(output, 1);
+      string output = Game.Play("paper", "scissors");
+      Assert.AreEqual(output, "Player 1 Wins!");
+    }
+    [TestMethod]
+    public void Play_returnsWinner_Draw()
+    {
+      string output = Game.Play("paper", "paper");
+      Assert.AreEqual(output, "Draw!");
     }
   }
 }
