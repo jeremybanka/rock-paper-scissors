@@ -67,8 +67,7 @@ namespace RockPaperScissors
       {
         return "Player 0 Wins!";
       }
-
-      return "foo";
+      return "Player 1 Wins!";
     }
   }
 }
