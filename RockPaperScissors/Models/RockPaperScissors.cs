@@ -50,6 +50,15 @@ namespace RockPaperScissors
         return moveIdx;
       }
 
+      static int WrapAround(int value, int min, int max)
+      {
+        int range = max - min;
+        while (value >= max) value -= range;
+        while (value < min) value += range;
+        return value;
+      }
+
+
       static string Play(string player0move, string player1move)
       {
         String[] validMoves = { "rock", "paper", "scissors" };
@@ -59,9 +68,9 @@ namespace RockPaperScissors
         }
         int player0moveIdx = GetIdxOfMove(validMoves, player0move);
         int player1moveIdx = GetIdxOfMove(validMoves, player1move);
-        //if (player0moveIdx == 0 && player1moveIdx == 1)
-        bool player0is1ahead = player0moveIdx == player1moveIdx + 1;
-        if (player0is1ahead)
+
+        bool player0hasWinningMove = player0moveIdx == WrapAround(player1moveIdx + 1, 0, validMoves.Length);
+        if (player0hasWinningMove)
         {
           return "Player 0 Wins!";
         }
