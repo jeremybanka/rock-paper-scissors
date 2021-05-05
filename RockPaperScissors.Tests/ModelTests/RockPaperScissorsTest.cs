@@ -7,22 +7,22 @@ namespace RockPaperScissors.Tests
   public class GameTests
   {
     [TestMethod]
-    public void Play_returnsWinner_0()
+    public void PlayLongForm_returnsWinner_0()
     {
-      string output = Game.Play("paper", "rock");
+      string output = Game.PlayLongform("paper", "rock");
       Assert.AreEqual(output, "Player 0 Wins!");
     }
 
     [TestMethod]
-    public void Play_returnsWinner_1()
+    public void PlayLongForm_returnsWinner_1()
     {
-      string output = Game.Play("paper", "scissors");
+      string output = Game.PlayLongform("paper", "scissors");
       Assert.AreEqual(output, "Player 1 Wins!");
     }
     [TestMethod]
-    public void Play_returnsWinner_Draw()
+    public void PlayLongForm_returnsWinner_Draw()
     {
-      string output = Game.Play("paper", "paper");
+      string output = Game.PlayLongform("paper", "paper");
       Assert.AreEqual(output, "Draw!");
     }
   }
