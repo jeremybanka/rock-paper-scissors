@@ -33,10 +33,22 @@ namespace RockPaperScissors.Tests
     }
 
     [TestMethod]
-    public void Play_States_Winner()
+    public void Play_States_Player0asWinner()
     {
       string output = Game.Play("rock", "scissors");
       Assert.AreEqual(output, "Player 0 Wins!");
+    }
+    [TestMethod]
+    public void Play_States_Player1asWinner()
+    {
+      string output = Game.Play("rock", "paper");
+      Assert.AreEqual(output, "Player 1 Wins!");
+    }
+    [TestMethod]
+    public void Play_States_Draw()
+    {
+      string output = Game.Play("rock", "rock");
+      Assert.AreEqual(output, "Draw!");
     }
   }
 }
