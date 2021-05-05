@@ -25,6 +25,12 @@ namespace RockPaperScissors.Tests
       string output = Game.PlayLongform("paper", "paper");
       Assert.AreEqual(output, "Draw!");
     }
+    [TestMethod]
+    public void WrapAround_Simplifies_Degree()
+    {
+      int output = Game.WrapAround(460, 0, 360);
+      Assert.AreEqual(output, 100);
+    }
   }
 }
 // public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
