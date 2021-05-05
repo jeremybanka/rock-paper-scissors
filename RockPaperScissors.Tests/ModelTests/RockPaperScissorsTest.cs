@@ -31,6 +31,13 @@ namespace RockPaperScissors.Tests
       int output = Game.WrapAround(460, 0, 360);
       Assert.AreEqual(output, 100);
     }
+
+    [TestMethod]
+    public void Play_States_Winner()
+    {
+      string output = Game.Play("rock", "scissors");
+      Assert.AreEqual(output, "Player 0 Wins!");
+    }
   }
 }
 // public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
